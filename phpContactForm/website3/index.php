@@ -5,11 +5,11 @@
 
 
       // Check for post data from submit var declared as a button type
-      if (filter_has_var(INPUT_POST,'submit')) {
-        // get form data and set equal to a var
-        $name = htmlspecialchars($_POST['name']);
-        $email = htmlspecialchars($_POST['email']);
-        $message = htmlspecialchars($_POST['message']);
+          if (filter_has_var(INPUT_POST,'submit')) {
+          // get form data and set equal to a var
+          $name = htmlspecialchars($_POST['name']);
+          $email = htmlspecialchars($_POST['email']);
+          $message = htmlspecialchars($_POST['message']);
 
       // make all fields required
       // empty($name); the empty function checks if a var has a value
@@ -33,10 +33,10 @@
                       <h4>Message</h4><p>'.$message.'</p>
               ';
               // email headers
-              // carraige retunr and new line \r\n
+              // carraige return and new line \r\n
               $headers = 'MIME-Version: 1.0'.'\r\n';
               // append to the header variable to not overwrite but add on
-              //specify content type
+              // specify content type
               // and charset to utf-8
               $headers .= 'Content-Type:text/html;charset=UTF-8'.'\r\n';
 
@@ -46,12 +46,12 @@
               // use the mail function
               // ($toEmail , $subject , $body, $headers) these params are needed for mail();
               if(mail($toEmail , $subject , $body, $headers)){
-                // email sent
+              // email sent
                 $msg = 'Email Sent !!';
                 $msgClass = 'alert-success';
               }else{
-                // email failed
-                // email sent
+              // email failed
+              // email sent
                 $msg = 'Email Failed !!';
                 $msgClass = 'alert-danger';
 
